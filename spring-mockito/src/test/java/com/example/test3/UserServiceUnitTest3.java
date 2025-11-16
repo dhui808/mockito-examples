@@ -2,7 +2,6 @@ package com.example.test3;
 
 import com.example.NameService;
 import com.example.UserService;
-import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
@@ -10,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
@@ -29,7 +29,7 @@ public class UserServiceUnitTest3 {
 
         String testName = userService.getUserName("MyId");
 
-        Assert.assertEquals("Mockito Spring", testName);
+        assertEquals("Mockito Spring", testName);
 
         verify(nameService, times(1)).getUserName("MyId");
     }
